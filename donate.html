@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate | W3B</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="brand">
+          <a href="index.html"><img src="logo.png" alt="W3B logo" class="brand-logo" /></a>
+        </div>
+        <nav class="site-nav">
+          <a href="index.html#history">About Us</a>
+          <a href="index.html#mission">Mission</a>
+          <a href="index.html#founder">Founder</a>
+          <a href="news.html">News</a>
+          <a href="index.html#contact">Contacts</a>
+          <a class="donate-link" href="donate.html">Donate</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero donate-hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Women's Basketball Beyond Borders</p>
+            <h1>Support refugee girls in Mahama Refugee Camp.</h1>
+            <p>
+              Every gift helps W3B provide basketball training, mentorship, leadership development,
+              and safer community spaces for girls in Mahama camp.
+            </p>
+          </div>
+        </section>
+
+        <section class="donate-grid">
+          <div class="donate-side">
+            <img src="donate-photo.png" alt="W3B basketball program" class="donate-image" />
+            <div class="donate-highlight">
+              <h2>Support coaching, mentorship, and leadership.</h2>
+              <p>
+                Gifts help provide equipment, training, education, and safe spaces for refugee girls
+                to grow through basketball with W3B.
+              </p>
+            </div>
+          </div>
+
+          <aside class="donate-panel">
+            <h2>Support W3B today.</h2>
+            <p>
+              Choose a one-time gift or monthly support to help refugee girls access basketball
+              training, mentorship, and future opportunity.
+            </p>
+
+            <div class="pill-toggle">
+              <button class="pill selected" type="button">Give once</button>
+              <button class="pill" type="button">Monthly</button>
+            </div>
+
+            <div class="amount-grid">
+              <button class="amount-button selected" type="button" data-base-value="1000">$1,000</button>
+              <button class="amount-button" type="button" data-base-value="500">$500</button>
+              <button class="amount-button" type="button" data-base-value="100">$100</button>
+              <button class="amount-button" type="button" data-base-value="50">$50</button>
+              <button class="amount-button" type="button" data-base-value="25">$25</button>
+              <button class="amount-button" type="button" data-base-value="0">Other</button>
+            </div>
+
+            <div class="currency-row">
+              <label for="currency-select">Currency</label>
+              <select id="currency-select" class="currency-select">
+                <option value="USD" selected>USD</option>
+                <option value="RWF">RWF</option>
+              </select>
+            </div>
+
+            <div class="donation-summary">
+              <p class="summary-label">Selected donation</p>
+              <div class="summary-value">
+                <span id="selected-currency-symbol">$</span>
+                <span id="selected-amount">1,000</span>
+                <span id="selected-currency">USD</span>
+              </div>
+              <p class="summary-convert">≈ <span id="converted-amount">1,300,000</span> <span id="converted-currency">RWF</span></p>
+            </div>
+
+            <div class="custom-amount">
+              <label for="gift-amount">Other amount</label>
+              <input id="gift-amount" type="text" placeholder="$250" />
+            </div>
+
+            <div class="donate-notice">
+              <p>
+                W3B is a refugee-led initiative serving girls in Mahama Refugee Camp.
+                Donations are processed securely through Stripe and receipts are emailed automatically.
+              </p>
+            </div>
+
+            <a id="donate-action" class="btn btn-primary" href="https://donate.stripe.com/test_aFa5kC49W3Eb7ky4Jje3e01" target="_blank" rel="noreferrer noopener">
+              Donate
+            </a>
+
+            <p class="trust-copy" style="font-size:0.9rem;margin-top:0.75rem;color:#333;">Secure checkout powered by Stripe. Your payment is encrypted and you'll receive a receipt via email. <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
+          </aside>
+        </section>
+
+        
+
+        <section class="section faq">
+          <div class="section-intro">
+            <h2>Frequently asked questions</h2>
+            <p>Learn more about how your gift supports W3B.</p>
+          </div>
+          <div class="faq-grid">
+            <article class="faq-item">
+              <h3 class="faq-question">Is my donation secure?</h3>
+              <p class="faq-answer">Yes. Donations are processed by Stripe and your payment details are protected.</p>
+            </article>
+            <article class="faq-item">
+              <h3 class="faq-question">Can I give monthly?</h3>
+              <p class="faq-answer">Yes, monthly support helps W3B provide consistent training, mentorship, and equipment.</p>
+            </article>
+            <article class="faq-item">
+              <h3 class="faq-question">Is my gift tax deductible?</h3>
+              <p class="faq-answer">W3B operates as a refugee-led nonprofit initiative. Your donation may be tax deductible depending on local laws.</p>
+            </article>
+            <article class="faq-item">
+              <h3 class="faq-question">How will my donation be used?</h3>
+              <p class="faq-answer">Gifts help fund basketball programming, mentorship, safe training spaces, and life skills support for girls in Mahama camp.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-col">
+            <img src="logo.png" alt="W3B logo" class="footer-logo" />
+            <p>
+              W3B (Women's Basketball Beyond Borders).
+            </p>
+          </div>
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <nav class="footer-links">
+              <a href="index.html#history">About Us</a>
+              <a href="index.html#mission">Mission</a>
+              <a href="index.html#founder">Founder</a>
+              <a href="index.html#contact">Contact</a>
+              <a href="donate.html">Donate</a>
+              <a href="privacy.html">Privacy</a>
+              <a href="terms.html">Terms</a>
+            </nav>
+          </div>
+          <div class="footer-col">
+            <h3>Contacts</h3>
+            <p>Email: <a href="mailto:womens3b@gmail.com">womens3b@gmail.com</a></p>
+            <p>Phone: <a href="tel:+250787818750">+250787818750</a></p>
+            <p>Instagram: <a href="https://www.instagram.com/w3b_hoopers/" target="_blank" rel="noopener noreferrer">w3b_hoopers</a></p>
+            <p>Tiktok: <a href="https://www.tiktok.com/@w3b_hoops?_r=1&_t=ZS-972pzNYmlSH" target="_blank" rel="noopener noreferrer">W3B_hoops</a></p>
+          </div>
+        </div>
+        <p class="footer-note">W3B © 2026 · Women's Basketball Beyond Borders</p>
+      </footer>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const conversionRate = 1300;
+        const baseUrl = 'donate-next.html';
+        const pillButtons = document.querySelectorAll('.pill-toggle .pill');
+        const amountButtons = document.querySelectorAll('.amount-button');
+        const currencySelect = document.getElementById('currency-select');
+        const giftAmountInput = document.getElementById('gift-amount');
+        const selectedSymbol = document.getElementById('selected-currency-symbol');
+        const selectedAmount = document.getElementById('selected-amount');
+        const selectedCurrency = document.getElementById('selected-currency');
+        const convertedAmount = document.getElementById('converted-amount');
+        const convertedCurrency = document.getElementById('converted-currency');
+        const donateAction = document.getElementById('donate-action');
+
+        let selectedBaseValue = 1000;
+        let selectedCurrencyCode = 'USD';
+        let useCustomAmount = false;
+        // Payment link configuration:
+        // Replace these placeholders with your actual Stripe Payment Links when ready.
+        // Keys use the format '<CURRENCY>:<AMOUNT>' for fixed links, and '<CURRENCY>:custom' for donor-entered
+        const paymentLinks = {
+          'USD:1000': 'https://donate.stripe.com/test_aFa5kC49W3Eb7ky4Jje3e01',
+          'USD:500': 'https://donate.stripe.com/test_aFa5kC49W3Eb7ky4Jje3e01',
+          'USD:100': 'https://donate.stripe.com/test_aFa5kC49W3Eb7ky4Jje3e01',
+          'USD:50': 'https://donate.stripe.com/test_aFa5kC49W3Eb7ky4Jje3e01',
+          'USD:25': 'https://donate.stripe.com/test_aFa5kC49W3Eb7ky4Jje3e01',
+          'USD:custom': 'https://donate.stripe.com/test_aFa5kC49W3Eb7ky4Jje3e01',
+          // Add RWF links if you create them in Stripe, e.g. 'RWF:1000': 'https://...'
+        };
+
+        function formatNumber(value, decimals = 0) {
+          return new Intl.NumberFormat('en-US', { maximumFractionDigits: decimals }).format(value);
+        }
+
+        function updateAmountButtons() {
+          amountButtons.forEach((button) => {
+            const baseValue = Number(button.dataset.baseValue || 0);
+            if (baseValue === 0) return;
+            if (selectedCurrencyCode === 'USD') {
+              button.textContent = '$' + formatNumber(baseValue);
+            } else {
+              button.textContent = 'RWF ' + formatNumber(baseValue * conversionRate);
+            }
+          });
+        }
+
+        function updatePlaceholder() {
+          giftAmountInput.placeholder = selectedCurrencyCode === 'USD'
+            ? '$250'
+            : 'RWF ' + formatNumber(250 * conversionRate);
+        }
+
+        function getCustomValue() {
+          const raw = giftAmountInput.value.replace(/[^0-9.]/g, '');
+          return Number(raw) || 0;
+        }
+
+        function updateDonateLink(amount) {
+          const key = selectedCurrencyCode + ':' + (useCustomAmount ? 'custom' : String(amount));
+          if (paymentLinks[key]) {
+            donateAction.href = paymentLinks[key];
+          } else if (paymentLinks[selectedCurrencyCode + ':custom']) {
+            // fallback to a custom-amount donation link for this currency
+            donateAction.href = paymentLinks[selectedCurrencyCode + ':custom'];
+          } else {
+            donateAction.href = '#';
+          }
+        }
+
+        function updateSummary() {
+          if (useCustomAmount) {
+            const amount = getCustomValue();
+            if (selectedCurrencyCode === 'USD') {
+              selectedSymbol.textContent = '$';
+              selectedAmount.textContent = formatNumber(amount);
+              selectedCurrency.textContent = 'USD';
+              convertedAmount.textContent = formatNumber(amount * conversionRate);
+              convertedCurrency.textContent = 'RWF';
+            } else {
+              selectedSymbol.textContent = '';
+              selectedAmount.textContent = formatNumber(amount);
+              selectedCurrency.textContent = 'RWF';
+              convertedAmount.textContent = formatNumber(amount / conversionRate, 2);
+              convertedCurrency.textContent = 'USD';
+            }
+            updateDonateLink(amount);
+            return;
+          }
+
+          if (selectedCurrencyCode === 'USD') {
+            selectedSymbol.textContent = '$';
+            selectedAmount.textContent = formatNumber(selectedBaseValue);
+            selectedCurrency.textContent = 'USD';
+            convertedAmount.textContent = formatNumber(selectedBaseValue * conversionRate);
+            convertedCurrency.textContent = 'RWF';
+            giftAmountInput.value = String(selectedBaseValue);
+            updateDonateLink(selectedBaseValue);
+          } else {
+            selectedSymbol.textContent = '';
+            selectedAmount.textContent = formatNumber(selectedBaseValue * conversionRate);
+            selectedCurrency.textContent = 'RWF';
+            convertedAmount.textContent = formatNumber(selectedBaseValue / conversionRate, 2);
+            convertedCurrency.textContent = 'USD';
+            giftAmountInput.value = String(selectedBaseValue * conversionRate);
+            updateDonateLink(selectedBaseValue * conversionRate);
+          }
+        }
+
+        pillButtons.forEach((button) => {
+          button.addEventListener('click', function () {
+            pillButtons.forEach((btn) => btn.classList.toggle('selected', btn === button));
+          });
+        });
+
+        amountButtons.forEach((button) => {
+          button.addEventListener('click', function () {
+            const value = Number(this.dataset.baseValue || 0);
+            if (value === 0) {
+              useCustomAmount = true;
+              amountButtons.forEach((btn) => btn.classList.remove('selected'));
+              giftAmountInput.value = '';
+              giftAmountInput.focus();
+            } else {
+              useCustomAmount = false;
+              selectedBaseValue = value;
+              amountButtons.forEach((btn) => btn.classList.toggle('selected', Number(btn.dataset.baseValue) === value));
+            }
+            updateSummary();
+          });
+        });
+
+        currencySelect.addEventListener('change', function () {
+          selectedCurrencyCode = this.value;
+          updateAmountButtons();
+          updatePlaceholder();
+          updateSummary();
+        });
+
+        giftAmountInput.addEventListener('input', function () {
+          useCustomAmount = true;
+          amountButtons.forEach((button) => button.classList.remove('selected'));
+          updateSummary();
+        });
+
+        updateAmountButtons();
+        updatePlaceholder();
+        updateSummary();
+      });
+    </script>
+  </body>
+</html>

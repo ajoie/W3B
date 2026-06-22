@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate Checkout | W3B</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell checkout-shell">
+      <header class="site-header">
+        <div class="brand">
+          <img src="logo.png" alt="W3B logo" class="brand-logo" />
+        </div>
+        <nav class="site-nav">
+          <a href="index.html">Home</a>
+          <a href="news.html">News</a>
+          <a href="donate.html">Donate</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="checkout-card">
+          <div class="checkout-summary-top">
+            <div class="summary-caption">View summary</div>
+            <div class="summary-total" id="checkout-total"></div>
+          </div>
+
+          <div class="step-indicator">
+            <div class="step active">
+              <span>1</span>
+              <p>Payment method</p>
+            </div>
+            <div class="step">
+              <span>2</span>
+              <p>Donation options</p>
+            </div>
+            <div class="step">
+              <span>3</span>
+              <p>Finish & donate</p>
+            </div>
+          </div>
+
+          <div class="payment-card">
+            <div class="payment-header">
+              <button type="button" class="radio-option selected" id="card-method" aria-pressed="true">
+                <div class="radio-circle"></div>
+                <div>
+                  <strong>Debit or credit</strong>
+                  <div class="radio-caption">Pay with your card</div>
+                </div>
+              </button>
+              <button type="button" class="radio-option" id="paypal-method" aria-pressed="false">
+                <div class="radio-circle"></div>
+                <div>
+                  <strong>PayPal</strong>
+                  <div class="radio-caption">Pay securely with PayPal</div>
+                </div>
+              </button>
+            </div>
+
+            <div id="card-fields" class="field-grid">
+              <label class="input-label" for="card-number">Card number</label>
+              <input class="input-control" id="card-number" type="text" placeholder="1234 1234 1234 1234" required />
+              <span class="error-text" id="card-number-error"></span>
+
+              <div class="card-row">
+                <div class="card-half">
+                  <label class="input-label" for="expiry-date">Expiration date</label>
+                  <input class="input-control" id="expiry-date" type="text" placeholder="MM / YY" required />
+                  <span class="error-text" id="expiry-date-error"></span>
+                </div>
+                <div class="card-half">
+                  <label class="input-label" for="security-code">Security code</label>
+                  <input class="input-control" id="security-code" type="text" placeholder="CVC" required />
+                  <span class="error-text" id="security-code-error"></span>
+                </div>
+              </div>
+
+              <label class="input-label" for="zip-code">Zip code</label>
+              <input class="input-control" id="zip-code" type="text" placeholder="Zip code" />
+            </div>
+
+            <div id="paypal-panel" class="paypal-panel hidden">
+              <div class="paypal-summary">
+                <p class="paypal-heading">PayPal checkout</p>
+                <p class="paypal-description">You’ll be redirected to PayPal to complete your donation securely.</p>
+                <div class="paypal-cta">PayPal</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checkout-footer">
+            <div class="checkout-note">
+              <strong>Cover processing fees ($2.66)</strong>
+              <p>This allows us to maximize your gift. Learn more</p>
+            </div>
+            <button id="continue-button" class="btn btn-primary btn-wide" type="button">Continue</button>
+          </div>
+
+          <p class="checkout-info">
+            Your donation won’t go through until all steps are complete.
+          </p>
+
+          <p class="checkout-secure">Payments are secure and encrypted.</p>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      function formatNumber(value) {
+        return new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(value);
+      }
+
+      const targetUrl = 'https://fundraise.asyv.org/campaign/803534/donate';
+      const params = new URLSearchParams(window.location.search);
+      const amount = Number(params.get('amount')) || 1000;
+      const currency = params.get('currency') || 'USD';
+      const symbol = currency === 'USD' ? '$' : 'RWF ';
+      const total = document.getElementById('checkout-total');
+      const cardMethod = document.getElementById('card-method');
+      const paypalMethod = document.getElementById('paypal-method');
+      const cardFields = document.getElementById('card-fields');
+      const paypalPanel = document.getElementById('paypal-panel');
+      const continueButton = document.getElementById('continue-button');
+      const cardNumber = document.getElementById('card-number');
+      const expiryDate = document.getElementById('expiry-date');
+      const securityCode = document.getElementById('security-code');
+      const cardNumberError = document.getElementById('card-number-error');
+      const expiryDateError = document.getElementById('expiry-date-error');
+      const securityCodeError = document.getElementById('security-code-error');
+
+      let selectedMethod = 'card';
+
+      function updateMethod(method) {
+        selectedMethod = method;
+        const usingCard = method === 'card';
+        cardMethod.classList.toggle('selected', usingCard);
+        paypalMethod.classList.toggle('selected', !usingCard);
+        cardMethod.setAttribute('aria-pressed', usingCard);
+        paypalMethod.setAttribute('aria-pressed', !usingCard);
+        cardFields.classList.toggle('hidden', !usingCard);
+        paypalPanel.classList.toggle('hidden', usingCard);
+        continueButton.textContent = usingCard ? 'Continue' : 'Continue with PayPal';
+        continueButton.classList.toggle('btn-paypal', !usingCard);
+        continueButton.classList.toggle('btn-primary', usingCard);
+        clearErrors();
+      }
+
+      function clearErrors() {
+        cardNumberError.textContent = '';
+        expiryDateError.textContent = '';
+        securityCodeError.textContent = '';
+      }
+
+      function validateCardFields() {
+        let isValid = true;
+        clearErrors();
+        if (!cardNumber.value.trim()) {
+          cardNumberError.textContent = 'Card number is required';
+          isValid = false;
+        }
+        if (!expiryDate.value.trim()) {
+          expiryDateError.textContent = 'Expiration date is required';
+          isValid = false;
+        }
+        if (!securityCode.value.trim()) {
+          securityCodeError.textContent = 'Security code is required';
+          isValid = false;
+        }
+        return isValid;
+      }
+
+      function buildRedirectUrl() {
+        const query = new URLSearchParams({
+          currency,
+          amount: String(amount),
+          method: selectedMethod
+        });
+        return `${targetUrl}?${query.toString()}`;
+      }
+
+      cardMethod.addEventListener('click', () => updateMethod('card'));
+      paypalMethod.addEventListener('click', () => updateMethod('paypal'));
+
+      continueButton.addEventListener('click', () => {
+        if (selectedMethod === 'card' && !validateCardFields()) {
+          return;
+        }
+        window.location.href = buildRedirectUrl();
+      });
+
+      total.textContent = symbol + formatNumber(amount) + ' / One-Time';
+    </script>
+  </body>
+</html>
