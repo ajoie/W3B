@@ -93,7 +93,7 @@
             <div class="donate-notice">
               <p>
                 W3B is a refugee-led initiative serving girls in Mahama Refugee Camp.
-                Donations are processed securely through our payment partner and receipts are emailed automatically.
+                Donations are processed securely through PayPal and receipts are emailed automatically.
               </p>
             </div>
 
@@ -101,7 +101,7 @@
               Donate
             </a>
 
-            <p class="trust-copy" style="font-size:0.9rem;margin-top:0.75rem;color:#333;">Secure checkout powered by our payment partner. Your payment is encrypted and you'll receive a receipt via email. <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
+            <p class="trust-copy" style="font-size:0.9rem;margin-top:0.75rem;color:#333;">Secure checkout powered by PayPal. Your payment is encrypted and you'll receive a receipt via email. <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
           </aside>
         </section>
 
@@ -115,7 +115,7 @@
           <div class="faq-grid">
             <article class="faq-item">
               <h3 class="faq-question">Is my donation secure?</h3>
-              <p class="faq-answer">Yes. Donations are processed by our payment partner and your payment details are protected.</p>
+              <p class="faq-answer">Yes. Donations are processed by PayPal and your payment details are protected.</p>
             </article>
             <article class="faq-item">
               <h3 class="faq-question">Can I give monthly?</h3>
@@ -183,16 +183,17 @@
         let selectedBaseValue = 1000;
         let selectedCurrencyCode = 'USD';
         let useCustomAmount = false;
+        const paypalDonationLink = 'https://www.paypal.com/ncp/payment/K6U43QN4PAX4Y';
         // Payment link configuration:
         // Replace these placeholders with your actual donation links when ready.
         // Keys use the format '<CURRENCY>:<AMOUNT>' for fixed links, and '<CURRENCY>:custom' for donor-entered
         const paymentLinks = {
-          'USD:1000': '',
-          'USD:500': '',
-          'USD:100': '',
-          'USD:50': '',
-          'USD:25': '',
-          'USD:custom': '',
+          'USD:1000': paypalDonationLink,
+          'USD:500': paypalDonationLink,
+          'USD:100': paypalDonationLink,
+          'USD:50': paypalDonationLink,
+          'USD:25': paypalDonationLink,
+          'USD:custom': paypalDonationLink,
           // Add RWF links if you create them, e.g. 'RWF:1000': 'https://...'
         };
 
@@ -231,7 +232,7 @@
             // fallback to a custom-amount donation link for this currency
             donateAction.href = paymentLinks[selectedCurrencyCode + ':custom'];
           } else {
-            donateAction.href = '#';
+            donateAction.href = paypalDonationLink;
           }
         }
 
