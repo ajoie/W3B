@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>W3B Official Launch | W3B</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="brand"><a href="../index.html"><img src="../logo.png" alt="W3B logo" class="brand-logo" /></a></div>
+        <nav class="site-nav"><a href="../index.html#history">About Us</a><a href="../index.html#mission">Mission</a><a href="../index.html#founder">Founder</a><a href="../news.html">News</a><a href="../index.html#contact">Contacts</a><a class="donate-link" href="../donate.html">Donate</a></nav>
+      </header>
+
+      <main>
+        <section class="story-detail section">
+          <a class="back-link" href="../news.html">Back to News &amp; Stories</a>
+          <div class="story-detail-header">
+            <p class="story-detail-date">July 29, 2026</p>
+            <h1>W3B Official Launch</h1>
+          
+          </div>
+
+
+          <div class="story-article">
+            
+          </div>
+
+          <div class="story-gallery-intro story-gallery-section">
+            <h2>Here are the highlights</h2>
+          </div>
+
+          <div class="story-video">
+            <video controls preload="metadata">
+              <source src="../story-photos/Official launch/WhatsApp Video 2026-08-02 at 14.06.42.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div class="story-gallery-intro story-gallery-section">
+            <h2>Launch Photos</h2>
+            <p>
+              Photos from the official launch, holiday camp, games, and peace marathon.
+            </p>
+          </div>
+
+          <div id="official-launch-gallery" class="story-gallery" aria-label="Photo gallery for W3B official launch"></div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-col"><img src="../logo.png" alt="W3B logo" class="footer-logo" /><p>W3B (Women's Basketball Beyond Borders).</p></div>
+          <div class="footer-col"><h3>Quick Links</h3><nav class="footer-links"><a href="../index.html#history">About Us</a><a href="../index.html#mission">Mission</a><a href="../index.html#founder">Founder</a><a href="../index.html#contact">Contact</a><a href="../donate.html">Donate</a><a href="../privacy.html">Privacy</a><a href="../terms.html">Terms</a></nav></div>
+          <div class="footer-col"><h3>Contacts</h3><p>Email: <a href="mailto:womens3b@gmail.com">womens3b@gmail.com</a></p><p>Phone: <a href="tel:+250787818750">+250787818750</a></p><p>Instagram: <a href="https://www.instagram.com/w3b_hoopers/" target="_blank" rel="noopener noreferrer">w3b_hoopers</a></p><p>Tiktok: <a href="https://www.tiktok.com/@w3b_hoops?_r=1&_t=ZS-972pzNYmlSH" target="_blank" rel="noopener noreferrer">W3B_hoops</a></p></div>
+        </div>
+        <p class="footer-note">W3B © 2026 · Women's Basketball Beyond Borders</p>
+      </footer>
+    </div>
+
+    <script>
+      const launchPhotos = [
+        'WhatsApp Image 2026-08-02 at 14.09.46.jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.02.jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.04.jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.05.jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.07.jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.09.jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.11.jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.12 (1).jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.12 (2).jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.12 (3).jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.12.jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.13 (1).jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.13 (2).jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.13 (3).jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.13 (4).jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.13.jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.14 (1).jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.14 (2).jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.14 (3).jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.14.jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.15 (1).jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.15 (2).jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.15 (3).jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.15.jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.16 (1).jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.16 (2).jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.16 (3).jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.16.jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.17 (1).jpeg',
+        'WhatsApp Image 2026-08-02 at 14.10.17.jpeg'
+      ];
+      const missingHighlightNumbers = new Set([19, 26, 122, 123, 134]);
+      const launchHighlightPhotos = Array.from({ length: 141 }, (_, index) => index + 1)
+        .filter((number) => !missingHighlightNumbers.has(number))
+        .map((number) => 'Highlights/w3b_' + number + '.jpg');
+      const gallery = document.getElementById('official-launch-gallery');
+
+      launchPhotos
+        .concat(launchHighlightPhotos)
+        .forEach((file, index) => {
+          const figure = document.createElement('figure');
+          const image = document.createElement('img');
+          image.src = '../story-photos/Official launch/' + file;
+          image.alt = 'W3B official launch photo ' + (index + 1);
+          image.loading = 'lazy';
+          image.decoding = 'async';
+          figure.appendChild(image);
+          gallery.appendChild(figure);
+        });
+    </script>
+  </body>
+</html>

@@ -640,6 +640,17 @@ button {
   line-height: 1.75;
 }
 
+.story-article {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.story-article p {
+  margin: 0 0 22px;
+  color: #2f3a4a;
+  line-height: 1.85;
+}
+
 .story-hero-image,
 .story-gallery figure {
   margin: 0;
@@ -685,6 +696,19 @@ button {
   max-width: 520px;
   color: #596174;
   line-height: 1.7;
+}
+
+.story-video {
+  max-width: 920px;
+  margin: 0 auto;
+  background: #000000;
+}
+
+.story-video video {
+  display: block;
+  width: 100%;
+  max-height: 720px;
+  background: #000000;
 }
 
 .story-gallery {
@@ -859,6 +883,19 @@ button {
   border-radius: 0;
   box-shadow: 0 24px 50px rgba(15, 23, 42, 0.16);
   object-fit: cover;
+}
+
+.founder-video-section {
+  padding-top: 0;
+}
+
+.founder-video-section video {
+  display: block;
+  width: 100%;
+  max-width: 920px;
+  max-height: 720px;
+  margin: 0 auto;
+  background: #000000;
 }
 
 .cta {
